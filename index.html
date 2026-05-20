@@ -2,17 +2,37 @@
 <html lang="cs">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
-    <title>zpscript</title>
+    <title>ImgPreviewer</title>
+    <link rel="stylesheet" href="/src/style.css">
   </head>
   <body>
-    <form action="" id="form">
-      <input type="text" id="search-input" placeholder="Hledej kytice..." />
-      <button type="submit">Hledat</button>
-    </form>
-    <div id="app"></div>
+    <header>
+      <form autocomplete="off" action="" id="searchForm">
+        <input type="text" id="searchInput" placeholder="Hledat obrazek...">
+        <button type="submit">Hledat</button>
+      </form>
+    </header>
+
+    <div id="spinner" class="spinner hidden"></div>
+
+    <div id="gallery"></div>
+
+    <div id="pagination" class="pagination">
+      <button id="prevBtn" disabled>Předchozí</button>
+      <span id="pageInfo">Page 1 of 1</span>
+      <button id="nextBtn">Další</button>
+    </div>
+
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <div id="closeModal" class="close"><span>&times;</span></div>
+        <img alt="Full size image" id="modalImg">
+        <div id="modalInfo"></div>
+      </div>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
